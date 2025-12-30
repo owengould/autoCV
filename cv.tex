@@ -97,12 +97,13 @@
 %debug page outer frames
 %\usepackage{showframe}
 
-
 % job listing environments
-\newenvironment{jobshort}[2]
+% modified jobshort to accept four parameters (more detail on job)
+\newenvironment{jobshort}[4]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \textbf{#1} & \hfill &  \textbf{#2} \\[3.5pt]
+    \textit{#3} & \hfill &  #4 \\[3.5pt]
     \end{tabularx}
     }
     {
@@ -120,8 +121,6 @@
     \end{itemize}
     \end{minipage}    
     }
-
-
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
@@ -142,41 +141,12 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
-
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically compiled and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
-
-%Experience
-\section{Work Experience}
-
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
-
-
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
-  
-%Projects
-\section{Projects}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\Huge{Owen Gould} \\[7.5 pt]
+\href{https://owengould.github.io}{\raisebox{-0.05\height}\faGlobe \ Personal Website} \ $|$ \ 
+\href{https://github.com/owengould}{\raisebox{-0.05\height}\faGithub\ owengould} \ $|$ \ 
+\href{https://www.linkedin.com/in/owengould}{\raisebox{-0.05\height}\faLinkedin\ owengould} $|$
+\href{mailto:gouldowe@grinnell.edu}{\raisebox{-0.05\height}\faEnvelope \ gouldowe@grinnell.edu} \ $|$ \
+\href{tel:+16508501411}{\raisebox{-0.05\height}\faMobile \ +1 (650) 850-1411} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -184,31 +154,63 @@ long long line of blah blah that will wrap when the table fills the column width
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
+2022 - 2026 & Bachelor of Arts, Mathematics at \textbf{Grinnell College} \hfill \normalsize (GPA: 3.62/4.0) \\
+\end{tabularx}
+\begin{itemize}[leftmargin=*]
+    \item Honors: Founder's Scholarship
+    \item Selected Coursework: Applied Statistics, Introduction to Data Science, Statistical Modeling, Probability \& Statistics I, Probability \& Statistics II, Categorical Data Analysis, Introduction to Machine Learning
+\end{itemize}
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
 
-2022 & Class 12th Some Board \hfill  (Grades) \\
+%Experience
+\section{Relevant Experience}
 
-2021 & Class 10th Some Board \hfill  (Grades) \\
+\begin{jobshort}{DASIL Mentor}{Grinnell, IA}{Grinnell College}{Sep 2025 - Present}
+Provided students with drop-in support for statistical concepts, probability theory, and R Programming.
+\end{jobshort}
+
+\begin{jobshort}{Statistics Grader}{Grinnell, IA}{Grinnell College}{Sep 2025 - Present}
+Provided constructive feedback to students' written work in Grinnell's upper-level probability courses.
+\end{jobshort}
+
+\begin{jobshort}{Biostatistics Researcher}{Iowa City, IA}{University of Iowa College of Public Health}{Jun-Jul 2025}
+Completed biostatistics coursework and mentored research at the Iowa Summer Institute in Biostatistics.
+\end{jobshort}
+
+\begin{jobshort}{Statistics SEPC}{Grinnell, IA}{Grinnell College}{Aug 2024 - Present}
+Assisted the Statistics Department in the faculty hiring/review process and in extracurricular activities.
+\end{jobshort}
+
+\begin{jobshort}{Mathematics Researcher}{Grinnell, IA}{Grinnell College}{May-Aug 2024}
+Completed readings in probability and performed mentored research on random walks and applications.
+\end{jobshort}
+
+\begin{jobshort}{Mathematics Tutor}{Grinnell, IA}{Grinnell College}{Aug 2023 - May 2024}
+Helped students to develop their skills for Grinnell's calculus and statistics courses with drop-in tutoring.
+\end{jobshort}
+
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{How Blood Flow Forces Trigger Cancer Cells to Spread} & \hfill \href{https://owengould.github.io/research/\#iowa-summer-institute-in-biostatistics-2025}{More Information} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Performed high-throughput analysis on RNA-Sequencing data using regression techniques and gene set enrichment analysis in R. Presented the results at the Iowa Summer Institute in Biostatistics Symposium.}  \\
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Modeling Animal Movement with Random Walks} & \hfill \href{https://owengould.github.io/research/\#grinnell-summer-map-2024}{More Information} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Conducted simulation studies on random walks in Python and utilized them to model elephant movement in R. Presented to Grinnell Math Department and Iowa Chapter of the American Statistical Association.}  \\
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+Computing &  \normalsize{R/RStudio (base and tidyverse), Python, markdown,} \LaTeX\\
 \end{tabularx}
 
 \vfill
